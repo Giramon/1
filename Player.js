@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import useSound from "./node_modules/use-sound";
+import useSound from "./use-sound";
 import qala from "./src/assets/qala.mp3";
 import { AiFillPlayCircle, AiFillPauseCircle } from "./src/component/react-icons/ai";
 import { BiSkipNext, BiSkipPrevious } from "./src/component/react-icons/bi";
