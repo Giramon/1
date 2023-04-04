@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import useSound from "use-sound";
-import qala from "../assets/qala.mp3";
-import { AiFillPlayCircle, AiFillPauseCircle } from "./react-icons/ai";
-import { BiSkipNext, BiSkipPrevious } from "./react-icons/bi";
-import { IconContext } from "./react-icons";
+import qala from "./src/assets/qala.mp3";
+import { AiFillPlayCircle, AiFillPauseCircle } from "./src/component/react-icons/ai";
+import { BiSkipNext, BiSkipPrevious } from "./src/component/react-icons/bi";
+import { IconContext } from "./src/component/react-icons";
 
 export default function Player() {
   const [isPlaying, setIsPlaying] = useState(false);
