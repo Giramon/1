@@ -1,4 +1,4 @@
-import Player from "./component/Player";
+import Player from "./Player";
 
 export default function App() {
   return (
