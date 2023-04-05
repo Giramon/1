@@ -59,11 +59,11 @@ export default function Player() {
 
   return (
     <div className="component">
-      <h2>Playing Now</h2>
+      <h2>Запустить музыку</h2>
       <img className="musicCover" src="https://picsum.photos/200/200" />
       <div>
-        <h3 className="title">Rubaiyyan</h3>
-        <p className="subTitle">Qala</p>
+        <h3 className="title">Extra Terra</h3>
+        <p className="subTitle">Blockchain</p>
       </div>
       <div>
         <div className="time">
