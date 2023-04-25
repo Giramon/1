@@ -11,7 +11,10 @@
     <script>
   vkBridge.send('VKWebAppInit');
     </script>  
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 
     <title>Comments app - VueJs</title>
@@ -34,9 +37,10 @@
                          
                             <input type="text" name="author" placeholder="Название" class="form-control" v-model="name"></input>
                             <br>
-                            <input  type="number" min="0" name="gold" placeholder="Количество" class="form-control" v-model="gold"></input>
+                            <div id="input"> 
+                             <input  type="number" min="0" name="gold" placeholder="Количество" class="form-control" v-model="gold"></input>
                             
-                            <input type="number" min="0" placeholder="Стоимость" name="message" class="form-control" v-model="message"></input>
+                             <input type="number" min="0" placeholder="Стоимость" name="message" class="form-control" v-model="message"></input> </div>
                          <p>
                             <button type="submit" class="btn btn-primary" v-on:click="addComment">Добавить заметку</button>
                          </p>
@@ -45,25 +49,25 @@
                          
                             <div class="list-group">
                             <div class="list-group-item" v-for="(comment, index) in allComments">
+                                <div id="span-list">
                             <span class="comment__author">
                                 Товар: <strong>{{ comment.name }}</strong>
                             </span>
-                            <div></div>                          
                             <span class="comment__gold">
                                 Кол-во: <strong>{{ comment.gold }}</strong>
                             </span>
-                            <div></div>  
                             <span class="comment__message">
                                 Цена: <strong>{{ comment.message }}</strong>
                             </span>
-                             
+                               
 
                             <div>
-                                <a href="#" 
+                                <a href="#" id="delete"
                                     title="Удалить" 
                                     v-on:click.prevent="removeComment(index)"
                                     >Удалить
-                                </a>
+                                </a> 
+                            </div> 
                             </div>
                             </div>
                             </div>
