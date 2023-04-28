@@ -2,6 +2,7 @@ h1  {
     text-align: center;
     font-size: 30px;
     font-family: 'Roboto';
+    background: #ffffff;
 }
 input[type="text"] {
     background: #F2F3F5 ;
