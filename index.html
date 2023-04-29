@@ -35,7 +35,7 @@
                     <div class="form-group">
                             
                          
-                            <input type="text" name="author" placeholder="Название товара" class="form-control" v-model="name"></input>
+                            <input type="text" name="author" placeholder="Название товара или услуг" class="form-control" v-model="name"></input>
                             <br>
                             <div id="input"> 
                              <input  type="number" min="0" name="gold" placeholder="Количество" class="form-control" v-model="gold"></input>
@@ -118,6 +118,17 @@
                         name: comment.name.trim() === '' ? '' : comment.name
                     }));
                 }
+            },
+            mounted() {
+                if (localStorage.getItem('comments')) this.comments = JSON.parse(localStorage.getItem('comments'));
+            },
+            watch: {
+                comments: {
+                    handler() {
+                        localStorage.setItem('comments', JSON.stringify(this.comments));
+                    },
+                    deep: true,
+                },
             }
         })
     </script>
