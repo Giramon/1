@@ -1,5 +1,6 @@
 import express from "express";
 const  app = express();
+import db from './database/database';
 
 app.post("/", (req, res, next) => {
     var errors=[]
