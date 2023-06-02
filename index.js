@@ -1,9 +1,10 @@
 import express from "express";
-const  app = express();
-import db from './database/database';
+import db from './app/database/database.js';
+
+const app = express();
 
 app.post("/", (req, res, next) => {
-    var errors=[]
+    const errors=[]
     if (!req.body.password){
         errors.push("No  gold specified");
     }
@@ -14,13 +15,13 @@ app.post("/", (req, res, next) => {
         res.status(400).json({"error":errors.join(",")});
         return;
     }
-    var data = {
+    const data = {
         name: req.body.name,
         gold: req.body.email,
         message : md5(req.body.password)
     }
-    var sql ='INSERT INTO user (name, gold, message) VALUES (?,?,?)'
-    var params =[data.name, data.gold, data.message]
+    const sql ='INSERT INTO user (name, gold, message) VALUES (?,?,?)'
+    const params =[data.name, data.gold, data.message]
     db.run(sql, params, function (err, result) {
         if (err){
             res.status(400).json({"error": err.message})
@@ -33,3 +34,10 @@ app.post("/", (req, res, next) => {
         })
     });
 })
+
+const port = 7657;
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  })
+  
