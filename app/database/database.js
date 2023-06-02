@@ -13,7 +13,7 @@ const db = new sqlite3.Database(DBSOURCE, (err) => {
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
             gold number,
-            message number)`,
+            price number)`,
        
         (err) => {
             if (err) {

@@ -15,13 +15,14 @@ app.post("/", (req, res, next) => {
         res.status(400).json({"error":errors.join(",")});
         return;
     }
+
     const data = {
         name: req.body.name,
         gold: req.body.email,
-        message : md5(req.body.password)
+        price : req.body.price,
     }
-    const sql ='INSERT INTO user (name, gold, message) VALUES (?,?,?)'
-    const params =[data.name, data.gold, data.message]
+    const sql ='INSERT INTO user (name, gold, price) VALUES (?,?,?)'
+    const params =[data.name, data.gold, data.price]
     db.run(sql, params, function (err, result) {
         if (err){
             res.status(400).json({"error": err.message})
@@ -34,6 +35,11 @@ app.post("/", (req, res, next) => {
         })
     });
 })
+
+
+app.get("/getAllRecord", reg, res) {
+    
+}
 
 const port = 7657;
 
