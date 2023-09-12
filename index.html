@@ -117,6 +117,17 @@
                     }));
                 }
             },
+            mounted() {
+                if (localStorage.getItem('comments')) this.comments = JSON.parse(localStorage.getItem('comments'));
+            },
+            watch: {
+                comments: {
+                    handler() {
+                        localStorage.setItem('comments', JSON.stringify(this.comments));
+                    },
+                    deep: true,
+                },
+            }
         })
     </script>
 </body>
